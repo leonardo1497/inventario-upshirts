@@ -24,6 +24,13 @@ SECRET_KEY = 'amj9!rarbe12s9!vzz+)3yj(^g3je@t&t59l=-1c21h@v_9z84'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
