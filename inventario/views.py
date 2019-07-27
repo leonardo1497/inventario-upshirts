@@ -36,7 +36,7 @@ class InventarioView(APIView):
         response = serializer.errors
         return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
-        def delete(self, request,pk,format=None):
+        def destroy(self, request,pk,format=None):
             inventario = get_object_or_404(Inventario.objects.all(), pk=pk)
             inventario.delete()
             return Response({"message": "Article with id `{}` has been deleted.".format(pk)},status=204)   

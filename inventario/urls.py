@@ -4,5 +4,5 @@ from inventario.views import *
 
 urlpatterns = [
     url(r'^inventario/$', InventarioView.as_view()),
-    url(r'^inventario/(?P<pk>\d+)/?$', InventarioView.as_view())
+    url(r'^inventario/(?P<pk>\d+)/?$/', InventarioView.as_view())
 ]
